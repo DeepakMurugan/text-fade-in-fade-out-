@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Automatic Text Fade</title>
+  <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+
+  <style>
+    .text-container {
+        justify-content: center;
+        /* align-items: center; */
+      height: 300px;
+      
+      /* Set a fixed height for the container */
+      overflow: hidden; /* Hide overflowing text */
+      position: relative; /* Set position to relative for absolute positioning of text */
+    }
+
+    .text {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 20px;
+      transition: opacity 1s ease-in-out; /* Adjust timing as needed */
+    }
+
+    .active {
+      opacity: 1;
+    }
+
+    h2{
+        margin-top: -10px; 
+         margin-bottom: -5px; 
+        color: #04215D;
+        font:50px 'Gilroy', sans-serif;
+        font-weight: 800;
+
+
+
+    }
+
+    #toppara{
+
+       font-weight: 500;
+      font-size: 20px;
+       color: #209586;
+       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    #botpara{
+      font-weight: 500;
+      font-size: 18px;
+        color: #FF014E;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <span class="text active">
+        <p id="toppara">Transform Perishable Food Into  </p>  
+
+        
+        <h2>Growing, Innovating, <br>
+        Revolutionizing:</h2>
+        <p id="botpara" >Explore Alethia Food Labs' Cost-Effective Technologies for <br> Processing the Agricultural Harvest  </p>  
+
+
+    </span>
+    <span class="text">
+        <p id="toppara">Transform Perishable Food Into  </p>  
+        <h2>High-quality,<br>
+        Long-lasting Food Products</h2>
+
+        </span>
+
+    <span class="text">
+
+        <p id="toppara">Empowering Farmers and FPOs </p>  
+        <h2>Reduce Post-Harvest Loss </h2>
+         <p id="botpara" >We enable farmers and farmer producer companies to increase their<br> profits through value addition</p>
+
+
+
+
+
+    </span>
+
+
+
+
+    <!-- Add more text spans as needed -->
+  </div>
+
+  <script>
+    const texts = document.querySelectorAll('.text');
+    let index = 0;
+
+    function changeText() {
+      texts.forEach((text, i) => {
+        if (i === index % texts.length) {
+          text.classList.add('active');
+        } else {
+          text.classList.remove('active');
+        }
+      });
+      index++;
+    }
+
+    setInterval(changeText, 5000); // Change text every 3 seconds
+  </script>
+</body>
+</html>
+
+
